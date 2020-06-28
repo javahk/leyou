@@ -1,0 +1,18 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: api-gateway
+zuul:
+  prefix: /api #添加路由前缀
+hystrix:
+  command:
+    default:
+      isolation:
+        thread:
+          timeoutInMilliseconds: 5000 # 熔断超时时长：5000ms
+ribbon:
+  ConnectTimeout: 1000 # ribbon连接超时时长，连接指的的是和服务端建立连接，消息已经传输到服务端
+  ReadTimeoout: 3500 # ribbon 读取超时时长 ，读取指的是等待服务端返回数据和下载数据流的时间，所以时间相对要大点
+  MaxAutoRetries: 0 # 当前服务重试次数
+  MaxAutoRetriesNextServer: 0 # 切换服务重试次数
