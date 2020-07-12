@@ -21,6 +21,12 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.fasterxml.jackson.dataformat</groupId>
+          <artifactId>jackson-dataformat-xml</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!--web启动器-->
     <dependency>
@@ -47,11 +53,7 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.learn.leyou</groupId>
-      <artifactId>ly-item-interface</artifactId>
-      <version>${leyou.latest.version}</version>
-    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
@@ -59,8 +61,7 @@
 
     <dependency>
       <groupId>com.learn.leyou</groupId>
-      <artifactId>ly-common</artifactId>
-      <version>${leyou.latest.version}</version>
+      <artifactId>ly-item-interface</artifactId>
     </dependency>
 
     <!--amqp-->
@@ -69,4 +70,5 @@
       <artifactId>spring-boot-starter-amqp</artifactId>
     </dependency>
   </dependencies>
+
 </project>
