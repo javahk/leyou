@@ -25,18 +25,17 @@ zuul:
       serviceId: upload-service
       stripPrefix: false
     search-service: /search/** # 将商品搜索微服务映射到/search/**
-#    user-service: /user/** # 将用户微服务映射到/user/**
-#    auth-service: /auth/** # 将授权微服务映射到/auth/**
-#    cart-service: /cart/**
-#    order-service: /order/**
+    user-service: /user/** # 将用户微服务映射到/user/**
+    auth-service: /auth/** # 将授权微服务映射到/auth/**
+    cart-service: /cart/**
+    order-service: /order/**
+  add-host-header: true
+  sensitive-headers: #覆盖默认敏感值信息
 
-#  add-host-header: true
-#  sensitive-headers:  #设置zuul的过滤头为空（所有的头信息全部展示）
-#
-#  #忽略服务列表
-#  ignored-services:
-#    - upload-service
-#  # 忽略upload-service服务
+  #忽略服务列表
+  ignored-services:
+    - upload-service
+  # 忽略upload-service服务
 ribbon:
   ConnectTimeout: 250 # 连接超时时间(ms)
   ReadTimeout: 2000 # 通信超时时间(ms)
@@ -49,16 +48,16 @@ hystrix:
           thread:
             timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
 
-#ly:
-#  jwt:
-#    pubKeyPath: D:/heima/rsa/rsa.pub # 公钥地址
-#    cookieName: LY_TOKEN # cookie的名称
-#
-#  filter:
-#    allowPaths:
-#      - /api/auth
-#      - /api/search
-#      - /api/user/register
-#      - /api/user/check
-#      - /api/user/code
-#      - /api/item
+ly:
+  jwt:
+    pubKeyPath: /Users/wangrui/rsa.pub # 公钥地址
+    cookieName: LY_TOKEN # cookie的名称
+
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item

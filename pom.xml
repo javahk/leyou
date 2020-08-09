@@ -32,10 +32,16 @@
     <modules>
         <module>ly-common</module>
         <module>ly-upload</module>
+        <module>ly-cart</module>
         <module>ly-gateway</module>
         <module>ly-registry</module>
         <module>ly-item</module>
+        <module>ly-page</module>
         <module>ly-search</module>
+        <module>ly-sms-service</module>
+        <module>ly-user</module>
+        <module>ly-auth-center</module>
+        <module>ly-order</module>
     </modules>
     <dependencies>
         <dependency>
@@ -114,6 +120,11 @@
                 <groupId>com.learn.leyou</groupId>
                 <artifactId>ly-common</artifactId>
                 <version>${leyou.latest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.10.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
